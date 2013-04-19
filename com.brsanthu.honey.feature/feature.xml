@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="com.brsanthu.honey.feature"
+      label="Honey"
+      version="0.0.1"
+      provider-name="www.brsanthu.com"
+      plugin="com.brsanthu.honey.plugin">
+
+   <description url="http://brsanthu.github.io/honey">
+      Sweet set of Text editing commands for Eclipse.
+   </description>
+
+   <copyright url="https://github.com/brsanthu/honey">
+      [Enter Copyright Description here.]
+   </copyright>
+
+   <license url="">
+      EPL
+   </license>
+
+   <plugin
+         id="com.brsanthu.eclipse.common"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="com.brsanthu.honey.plugin"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>
