@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Honey
+Bundle-SymbolicName: com.brsanthu.honey.plugin;singleton:=true
+Bundle-Version: 0.0.1
+Bundle-Activator: com.brsanthu.honey.Activator
+Bundle-Vendor: www.brsanthu.com
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.ui.ide,
+ org.eclipse.jface.text,
+ org.eclipse.ui.workbench.texteditor,
+ com.brsanthu.eclipse.common.ui,
+ org.eclipse.ui.editors
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ActivationPolicy: lazy

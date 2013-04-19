@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.commands">
+      <category
+            name="Text Editing"
+            id="com.brsanthu.honey.command.category.textEditing">
+      </category>
+      <command
+            categoryId="com.brsanthu.honey.command.category.textEditing"
+            id="com.brsanthu.honey.command.convertDoubleQuotesToSingleQuotes"
+            name="Convert &quot; to &apos;">
+      </command>
+      <command
+            categoryId="com.brsanthu.honey.command.category.textEditing"
+            id="com.brsanthu.honey.command.convertSingleQuotesToDoubleQuotes"
+            name="Convert &apos; to &quot;">
+      </command>
+      <command
+            categoryId="com.brsanthu.honey.command.category.textEditing"
+            description="Converts the &lt; and &gt; characters to &amp;lt; and &amp;gt; strings in the selected text."
+            id="com.brsanthu.honey.command.convertGtLtToXmlSafe"
+            name="Convert &lt;&gt; to &amp;lt;&amp;gt;">
+      </command>
+      <command
+            categoryId="com.brsanthu.honey.command.category.textEditing"
+            description="Converts the &amp;lt; and &amp;gt; characters to &lt; and &gt; strings in the selected text."
+            id="com.brsanthu.honey.command.convertXmlSafeToGtLt"
+            name="Convert &amp;lt;&amp;gt; to &lt;&gt;">
+      </command>
+      <command
+            categoryId="com.brsanthu.honey.command.category.textEditing"
+            description="Swaps the &quot; with &apos; in the selected text"
+            id="com.brsanthu.honey.command.swapQuotes"
+            name="Swap &quot; &amp; &apos;">
+      </command>
+      <command
+            categoryId="com.brsanthu.honey.command.category.textEditing"
+            id="com.brsanthu.honey.command.convertToUpperCase"
+            name="Convert to UPPER CASE">
+      </command>
+      <command
+            categoryId="com.brsanthu.honey.command.category.textEditing"
+            id="com.brsanthu.honey.command.convertToLowerCase"
+            name="Convert to lower case">
+      </command>
+      <command
+            categoryId="com.brsanthu.honey.command.category.textEditing"
+            id="com.brsanthu.honey.command.convertToCamelCase"
+            name="Convert to Camel Case">
+      </command>
+      <command
+            categoryId="com.brsanthu.honey.command.category.textEditing"
+            id="com.brsanthu.honey.command.convertToSentenseCase"
+            name="Convert to Sentense case">
+      </command>
+      <command
+            categoryId="com.brsanthu.honey.command.category.textEditing"
+            id="com.brsanthu.honey.command.convertToInvertCase"
+            name="Convert to iNVERT cASE">
+      </command>
+      <command
+            categoryId="com.brsanthu.honey.command.category.textEditing"
+            id="com.brsanthu.honey.command.trimTrailingSpaces"
+            name="Trim Trailing White Spaces">
+      </command>
+      <command
+            categoryId="com.brsanthu.honey.command.category.textEditing"
+            description="Inserts current date in &apos;12/31/2012&apos;"
+            id="com.brsanthu.honey.command.insertShortDate"
+            name="Insert Short Date">
+      </command>
+      <command
+            categoryId="com.brsanthu.honey.command.category.textEditing"
+            description="Inserts current date in &apos;Monday, December 31, 2012&apos; format"
+            id="com.brsanthu.honey.command.insertLongDate"
+            name="Insert Long Date">
+      </command>
+      <command
+            description="Inserts current time in &apos;1:45:30 PM&apos; format"
+            id="com.brsanthu.honey.command.insertTime"
+            name="Insert Time">
+      </command>
+      <command
+            description="Inserts current time in unix epoch format"
+            id="com.brsanthu.honey.command.insertUnixTime"
+            name="Insert Unix Time">
+      </command>
+      <command
+            description="Inserts current time in &apos;2012-12-31&apos; format"
+            id="com.brsanthu.honey.command.insertIsoDate"
+            name="Insert ISO Date">
+      </command>
+      <command
+            description="Inserts current time in &apos;2012-12-31T12:00:00&apos; format"
+            id="com.brsanthu.honey.command.insertIsoDateTime"
+            name="Insert ISO Date Time">
+      </command>
+      <command
+            description="Inserts the Date/Time in selected format"
+            id="com.brsanthu.honey.command.insertCustomDate"
+            name="Insert Custom Date/Time">
+      </command>
+      <command
+            description="Encrypts the selected or all editor text using AES-128/CBC encryption and encodes as Hex String"
+            id="com.brsanthu.honey.command.encryptText"
+            name="Encrypt Text">
+      </command>
+      <command
+            description="Decrypts the selected or all editor text using AES-128/CBC bit decryption"
+            id="com.brsanthu.honey.command.decryptText"
+            name="Decrypt Text">
+      </command>
+      <command
+            description="Copies the current editor file name to clipboard"
+            id="com.brsanthu.honey.command.copyFileName"
+            name="Copy File Name">
+      </command>
+      <command
+            description="Copies the current editor file name with path to clipboard in unix format"
+            id="com.brsanthu.honey.command.copyFileNameWithPathUnix"
+            name="Copy File Name with Path (Unix)">
+      </command>
+      <command
+            description="Copies the current editor file name with path to clipboard in Windows format"
+            id="com.brsanthu.honey.command.copyFileNameWithPathWindows"
+            name="Copy File Name with Path (Windows)">
+      </command>
+      <command
+            description="Copies the all opened editor file names with path to clipboard in unix format"
+            id="com.brsanthu.honey.command.copyFileNamesWithPathUnix"
+            name="Copy All File Names with Path (Unix)">
+      </command>
+      <command
+            description="Copies the all opened editor file names with path to clipboard in windows format"
+            id="com.brsanthu.honey.command.copyFileNamesWithPathWindows"
+            name="Copy All File Names with Path (Windows)">
+      </command>
+      <command
+            description="Copies and appends the selected text to clipboard"
+            id="com.brsanthu.honey.command.copyAppend"
+            name="Copy and Append">
+      </command>
+      <command
+            description="Copies and appends the selected text to clipboard with New Line"
+            id="com.brsanthu.honey.command.copyAppendNewLine"
+            name="Copy and Append with New Line">
+      </command>
+      <command
+            id="com.brsanthu.honey.command.toggleBookmark"
+            name="Toggle Bookmark(s) (Create or Remove Bookmark)">
+      </command>
+      <command
+            id="com.brsanthu.honey.command.clearBookmarks"
+            name="Clear (Remove or Delete) All Bookmarks">
+      </command>
+      <command
+            id="com.brsanthu.honey.command.copyBookmarkedLines"
+            name="Copy Bookmarked Lines">
+      </command>
+      <command
+            id="com.brsanthu.honey.command.setFastmark"
+            name="Set Fastmark">
+         <commandParameter
+               id="com.brsanthu.honey.command.setFastmark.fastmarkNumber"
+               name="Fastmark Number"
+               optional="false"
+               typeId="org.eclipse.ui.dialogs.Integer"
+               values="com.brsanthu.honey.handler.bookmark.BookmarkParameterValues">
+         </commandParameter>
+      </command>
+      <command
+            id="com.brsanthu.honey.command.openBookmark"
+            name="Open Bookmark">
+      </command>
+      <command
+            id="com.brsanthu.honey.command.gotoFastmark"
+            name="Goto Fastmark">
+         <commandParameter
+               id="com.brsanthu.honey.command.gotoFastmark.fastmarkNumber"
+               name="Fastmark Number"
+               optional="false"
+               values="com.brsanthu.honey.handler.bookmark.BookmarkParameterValues">
+         </commandParameter>
+      </command>
+      <command
+            id="com.brsanthu.honey.command.gotoBookmarkInFile"
+            name="Goto Bookmark in File">
+         <commandParameter
+               id="com.brsanthu.honey.command.gotoBookmarkInFile.bookmarkNumber"
+               name="Bookmark Number"
+               optional="true"
+               values="com.brsanthu.honey.handler.bookmark.BookmarkParameterValues">
+         </commandParameter>
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            class="com.brsanthu.honey.handler.replace.ConvertDoubleQuotesToSingleQuotesHandler"
+            commandId="com.brsanthu.honey.command.convertDoubleQuotesToSingleQuotes">
+      </handler>
+      <handler
+            class="com.brsanthu.honey.handler.replace.ConvertSingleQuotesToDoubleQuotesHandler"
+            commandId="com.brsanthu.honey.command.convertSingleQuotesToDoubleQuotes">
+      </handler>
+      <handler
+            class="com.brsanthu.honey.handler.replace.ConvertGtLtToXmlSafeHandler"
+            commandId="com.brsanthu.honey.command.convertGtLtToXmlSafe">
+      </handler>
+      <handler
+            class="com.brsanthu.honey.handler.replace.ConvertXmlSafeToGtLtHandler"
+            commandId="com.brsanthu.honey.command.convertXmlSafeToGtLt">
+      </handler>
+      <handler
+            class="com.brsanthu.honey.handler.replace.SwapQuotesHandler"
+            commandId="com.brsanthu.honey.command.swapQuotes">
+      </handler>
+      <handler
+            class="com.brsanthu.honey.handler.replace.ConvertToUpperCaseHandler"
+            commandId="com.brsanthu.honey.command.convertToUpperCase">
+      </handler>
+      <handler
+            class="com.brsanthu.honey.handler.replace.ConvertToLowerCaseHandler"
+            commandId="com.brsanthu.honey.command.convertToLowerCase">
+      </handler>
+      <handler
+            class="com.brsanthu.honey.handler.replace.ConvertToCamelCaseHandler"
+            commandId="com.brsanthu.honey.command.convertToCamelCase">
+      </handler>
+      <handler
+            class="com.brsanthu.honey.handler.replace.ConvertToSentenseCaseHandler"
+            commandId="com.brsanthu.honey.command.convertToSentenseCase">
+      </handler>
+      <handler
+            class="com.brsanthu.honey.handler.replace.ConvertToInvertCaseHandler"
+            commandId="com.brsanthu.honey.command.convertToInvertCase">
+      </handler>
+      <handler
+            class="com.brsanthu.honey.handler.delete.TrimTrailingSpacesHandler"
+            commandId="com.brsanthu.honey.command.trimTrailingSpaces">
+      </handler>
+      <handler
+            class="com.brsanthu.honey.handler.insert.InsertShortDateHandler"
+            commandId="com.brsanthu.honey.command.insertShortDate">
+      </handler>
+      <handler
+            class="com.brsanthu.honey.handler.insert.InsertLongDateHandler"
+            commandId="com.brsanthu.honey.command.insertLongDate">
+      </handler>
+      <handler
+            class="com.brsanthu.honey.handler.insert.InsertTimeHandler"
+            commandId="com.brsanthu.honey.command.insertTime">
+      </handler>
+      <handler
+            class="com.brsanthu.honey.handler.insert.InsertUnixTimeHandler"
+            commandId="com.brsanthu.honey.command.insertUnixTime">
+      </handler>
+      <handler
+            class="com.brsanthu.honey.handler.insert.InsertIsoDateHandler"
+            commandId="com.brsanthu.honey.command.insertIsoDate">
+      </handler>
+      <handler
+            class="com.brsanthu.honey.handler.insert.InsertIsoDateTimeHandler"
+            commandId="com.brsanthu.honey.command.insertIsoDateTime">
+      </handler>
+      <handler
+            class="com.brsanthu.honey.handler.insert.InsertCustomDateHandler"
+            commandId="com.brsanthu.honey.command.insertCustomDate">
+      </handler>
+      <handler
+            class="com.brsanthu.honey.handler.copy.CopyFileNameHandler"
+            commandId="com.brsanthu.honey.command.copyFileName">
+      </handler>
+      <handler
+            class="com.brsanthu.honey.handler.copy.CopyFileNameWithPathUnixHandler"
+            commandId="com.brsanthu.honey.command.copyFileNameWithPathUnix">
+      </handler>
+      <handler
+            class="com.brsanthu.honey.handler.copy.CopyFileNameWithPathWindowsHandler"
+            commandId="com.brsanthu.honey.command.copyFileNameWithPathWindows">
+      </handler>
+      <handler
+            class="com.brsanthu.honey.handler.copy.CopyAllFileNamesWithPathUnixHandler"
+            commandId="com.brsanthu.honey.command.copyFileNamesWithPathUnix">
+      </handler>
+      <handler
+            class="com.brsanthu.honey.handler.copy.CopyAllFileNamesWithPathWindowsHandler"
+            commandId="com.brsanthu.honey.command.copyFileNamesWithPathWindows">
+      </handler>
+      <handler
+            class="com.brsanthu.honey.handler.replace.EncryptTextHandler"
+            commandId="com.brsanthu.honey.command.encryptText">
+      </handler>
+      <handler
+            class="com.brsanthu.honey.handler.replace.DecryptTextHandler"
+            commandId="com.brsanthu.honey.command.decryptText">
+      </handler>
+      <handler
+            class="com.brsanthu.honey.handler.copy.CopyAppendHandler"
+            commandId="com.brsanthu.honey.command.copyAppend">
+      </handler>
+      <handler
+            class="com.brsanthu.honey.handler.copy.CopyAppendWithNewLineHandler"
+            commandId="com.brsanthu.honey.command.copyAppendNewLine">
+      </handler>
+      <handler
+            class="com.brsanthu.honey.handler.bookmark.ToggleBookmarkHandler"
+            commandId="com.brsanthu.honey.command.toggleBookmark">
+         <activeWhen>
+            <reference
+                  definitionId="com.brsanthu.honey.definition.currentEditorIsTextEditor">
+            </reference>
+         </activeWhen>
+      </handler>
+      <handler
+            class="com.brsanthu.honey.handler.bookmark.ClearBookmarksHandler"
+            commandId="com.brsanthu.honey.command.clearBookmarks">
+         <activeWhen>
+            <reference
+                  definitionId="com.brsanthu.honey.definition.currentEditorIsTextEditor">
+            </reference>
+         </activeWhen>
+      </handler>
+      <handler
+            class="com.brsanthu.honey.handler.copy.CopyBookmarkedLinesHandler"
+            commandId="com.brsanthu.honey.command.copyBookmarkedLines">
+         <activeWhen>
+            <reference
+                  definitionId="com.brsanthu.honey.definition.currentEditorIsTextEditor">
+            </reference>
+         </activeWhen>
+      </handler>
+      <handler
+            class="com.brsanthu.honey.handler.bookmark.OpenBookmarkHandler"
+            commandId="com.brsanthu.honey.command.openBookmark">
+      </handler>
+      <handler
+            class="com.brsanthu.honey.handler.bookmark.GotoFastmarkHandler"
+            commandId="com.brsanthu.honey.command.gotoFastmark">
+         <activeWhen>
+            <reference
+                  definitionId="com.brsanthu.honey.definition.currentEditorIsTextEditor">
+            </reference>
+         </activeWhen>
+      </handler>
+      <handler
+            class="com.brsanthu.honey.handler.bookmark.GotoBookmarkInFileHandler"
+            commandId="com.brsanthu.honey.command.gotoBookmarkInFile">
+         <activeWhen>
+            <reference
+                  definitionId="com.brsanthu.honey.definition.currentEditorIsTextEditor">
+            </reference>
+         </activeWhen>
+      </handler>
+      <handler
+            class="com.brsanthu.honey.handler.bookmark.SetFastmarkHandler"
+            commandId="com.brsanthu.honey.command.setFastmark">
+         <activeWhen>
+            <reference
+                  definitionId="com.brsanthu.honey.definition.currentEditorIsTextEditor">
+            </reference>
+         </activeWhen>
+      </handler>
+   </extension>
+   <extension
+         point="org.eclipse.core.expressions.definitions">
+      <definition
+            id="com.brsanthu.honey.definition.currentEditorIsTextEditor">
+         <with
+               variable="activeEditor">
+            <instanceof
+                  value="org.eclipse.ui.texteditor.AbstractTextEditor">
+            </instanceof>
+         </with>
+      </definition>
+   </extension>
+
+</plugin>
