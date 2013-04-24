@@ -3,7 +3,6 @@ package com.brsanthu.honey.handler.bookmark;
 import org.eclipse.core.resources.IMarker;
 import org.eclipse.jface.text.ITextSelection;
 
-
 public class ToggleBookmarkHandler extends AbstractBookmarkHandler {
 
     @Override

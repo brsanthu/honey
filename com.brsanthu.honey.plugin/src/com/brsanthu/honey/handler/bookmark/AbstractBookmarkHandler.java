@@ -4,7 +4,12 @@ import static com.brsanthu.eclipse.common.ui.util.EclipseUiUtils.getActivePage;
 import static org.apache.commons.lang3.StringUtils.isEmpty;
 import static org.apache.commons.lang3.StringUtils.isNotEmpty;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.eclipse.core.commands.ExecutionException;
@@ -35,10 +40,18 @@ public abstract class AbstractBookmarkHandler extends AbstractEditorHandler {
         }
     }
 
-    public IMarker[] getBookmarks() {
+    public List<IMarker> getCurrentEditorBookmarks() {
         IResource resource = getEditor().getResource();
         try {
-            return resource.findMarkers(IMarker.BOOKMARK, false, IResource.DEPTH_ZERO);
+            IMarker[] markers = resource.findMarkers(IMarker.BOOKMARK, false, IResource.DEPTH_ZERO);
+            List<IMarker> bookmarks = new ArrayList<IMarker>(Arrays.asList(markers));
+            Collections.sort(bookmarks, new Comparator<IMarker>() {
+                @Override
+                public int compare(IMarker o1, IMarker o2) {
+                    return ((Integer) getLineNumber(o1)).compareTo(getLineNumber(o2));
+                }
+            });
+            return bookmarks;
         } catch (CoreException e) {
             e.printStackTrace();
         }
@@ -47,12 +60,10 @@ public abstract class AbstractBookmarkHandler extends AbstractEditorHandler {
     }
 
     public IMarker getBookmark(int lineNumber) {
-        IMarker[] findMarkers = getBookmarks();
-        if (findMarkers != null && findMarkers.length > 0) {
-            for (IMarker iMarker : findMarkers) {
-                if (MarkerUtilities.getLineNumber(iMarker) == (lineNumber + 1)) {
-                    return iMarker;
-                }
+        List<IMarker> bookmarks = getCurrentEditorBookmarks();
+        for (IMarker iMarker : bookmarks) {
+            if (MarkerUtilities.getLineNumber(iMarker) == (lineNumber + 1)) {
+                return iMarker;
             }
         }
         return null;

@@ -11,7 +11,7 @@ import org.eclipse.core.resources.ResourcesPlugin;
 public abstract class AbstractFastmarkHandler extends AbstractBookmarkHandler {
     
     public List<IMarker> getFastmarksAtCurrentLine() {
-        int currentLineNumber = getEditor().getCurrentLineNumber() + 1;
+        int currentLineNumber = getEditor().getCurrentLineNumber();
         List<IMarker> fastmarks = getFastmarks();
         List<IMarker> matchedFastmarks = new ArrayList<IMarker>();
         for (IMarker fastmark : fastmarks) {

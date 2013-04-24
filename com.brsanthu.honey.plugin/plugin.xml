@@ -195,6 +195,14 @@
                values="com.brsanthu.honey.handler.bookmark.BookmarkParameterValues">
          </commandParameter>
       </command>
+      <command
+            id="com.brsanthu.honey.command.gotoNextBookmarkInFile"
+            name="Goto Next Bookmark in File">
+      </command>
+      <command
+            id="com.brsanthu.honey.command.gotoPrevBookmarkInFile"
+            name="Goto Prev Bookmark in File">
+      </command>
    </extension>
    <extension
          point="org.eclipse.ui.handlers">
@@ -358,6 +366,24 @@
       <handler
             class="com.brsanthu.honey.handler.bookmark.SetFastmarkHandler"
             commandId="com.brsanthu.honey.command.setFastmark">
+         <activeWhen>
+            <reference
+                  definitionId="com.brsanthu.honey.definition.currentEditorIsTextEditor">
+            </reference>
+         </activeWhen>
+      </handler>
+      <handler
+            class="com.brsanthu.honey.handler.bookmark.GotoNextBookmarkInFileHandler"
+            commandId="com.brsanthu.honey.command.gotoNextBookmarkInFile">
+         <activeWhen>
+            <reference
+                  definitionId="com.brsanthu.honey.definition.currentEditorIsTextEditor">
+            </reference>
+         </activeWhen>
+      </handler>
+      <handler
+            class="com.brsanthu.honey.handler.bookmark.GotoPrevBookmarkInFileHandler"
+            commandId="com.brsanthu.honey.command.gotoPrevBookmarkInFile">
          <activeWhen>
             <reference
                   definitionId="com.brsanthu.honey.definition.currentEditorIsTextEditor">

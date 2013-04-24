@@ -1,4 +1,8 @@
 package com.brsanthu.honey.handler.copy;
+import static com.brsanthu.eclipse.common.ui.util.EclipseUiUtils.setTimedStatusErrorMessage;
+
+import java.util.List;
+
 import org.eclipse.core.resources.IMarker;
 import org.eclipse.ui.texteditor.MarkerUtilities;
 
@@ -11,11 +15,11 @@ public class CopyBookmarkedLinesHandler extends AbstractTextCopyHandler {
     public String executeCopyCommand(String selectedText) {
         ClearBookmarksHandler util = new ClearBookmarksHandler();
         util.setEditor(getEditor());
-        IMarker[] bookmarks = util.getBookmarks();
-        if (bookmarks == null || bookmarks.length == 0) {
+        List<IMarker> bookmarks = util.getCurrentEditorBookmarks();
+        if (bookmarks.isEmpty()) {
+            setTimedStatusErrorMessage("There are no bookmarks in File to copy!");
             return null;
         }
-        
         StringBuilder sb = new StringBuilder();
         for (IMarker iMarker : bookmarks) {
             String line = getEditor().getLine(MarkerUtilities.getLineNumber(iMarker) - 1);

@@ -107,7 +107,7 @@ public class HoneyEditor {
     public int getCurrentLineNumber() {
         TextSelection textSelection = getTextSelection();
         if (textSelection != null) {
-            return textSelection.getStartLine();
+            return textSelection.getStartLine() + 1;
         }
         
         return 0;
