@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Honey : Sweet set of text related commands for Eclipse" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Honey</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/brsanthu/honey">View on GitHub</a>
+
+          <h1 id="project_title">Honey</h1>
+          <h2 id="project_tagline">Sweet set of text related commands for Eclipse</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/brsanthu/honey/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/brsanthu/honey/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h2>Welcome to Honey</h2>
+
+<p>Honey is set of Text related commands for Eclipse. Most of the commands are not specific to any language (like Java for example) and hence can be used in any Text editor in Eclipse. Commands are intended to be used using quick access and hence they are not exposed as menu items.</p>
+
+<p>Following sections highlights the groups of commands and commands themselves.</p>
+
+<h3>Bookmarks</h3>
+
+<p>Intent of the bookmarks is to easily set a mark at file/line so that you can easily go back to it. But Eclipse makes it tad difficult to set a bookmark. When you want to set bookmark, you have to click on sidebar and give a name to it.</p>
+
+<p>Honey makes it easier to manage the bookmarks with following commands.</p>
+
+<ul>
+<li>Open Bookmark - Opens Quick-Outline type popup dialog with all bookmarks defined in the workspace</li>
+<li>Set Bookmark - Sets the bookmark at the current editor line. No, it won't ask for any name.</li>
+<li>Clear Bookmarks in File - Clears all bookmarks in the current editor.</li>
+<li>Goto Bookmark In File - Let's you goto a bookmark using a number (automatically assigned)</li>
+<li>Goto Next Bookmark - Goes to next bookmark in file</li>
+<li>Goto Previsou Bookmark - Goes to previous bookmark in file</li>
+<li>Toggle Bookmark - Toggles the bookmark at current editor line</li>
+</ul><h3>Fastmarks</h3>
+
+<p>Fastmarks are nothing but bookmarks but little faster. You can access them anywhere in the workspace with a number and there can be only one Fastmark for each number in workspace.</p>
+
+<p>Commands</p>
+
+<ul>
+<li>Set Fastmark - Sets a fastmark of specified number</li>
+<li>Goto Fastmark - Goes to specified numbered Fastmark</li>
+</ul><h3>Copy</h3>
+
+<p>This group of commands let's you copy some text.</p>
+
+<p>Commands</p>
+
+<ul>
+<li>Copy Filename with Path (Unix/Windows) - Copies the current open editor file name in Unix/Windows style of Path separator</li>
+<li>Copy All Filenames with Path (Unix/Windows) - Copies the all open editor file names in Unix/Windows style of Path separator</li>
+<li>Copy Append - Whatever you copy, will be appended to current Clipboard text</li>
+<li>Copy Append with New Line - Same as "Copy Append", but adds new line before copying</li>
+<li>Copy Bookmarked Lines - Copies all bookmarked lines in current file to clipboard</li>
+</ul><h3>Delete</h3>
+
+<ul>
+<li>Delete Surplus Blank Lines - Deletes the surplus blank lines in the text editor.</li>
+<li>Trim Training Spaces - Trims the trailing whitespace chars (Space, tab)</li>
+</ul><h3>Insert</h3>
+
+<ul>
+<li>Insert ISO Date - Inserts the current date in yyyy-MM-dd format</li>
+<li>Insert ISO Date/Time - Inserts the current datetime in yyyy-MM-dd'T'HH:mm:ssZ format</li>
+<li>Insert Long Date - Inserts the current date in long format</li>
+<li>Insert Short Date - Inserts the current date in short format</li>
+<li>Insert Time - Inserts the current time</li>
+<li>Insert Unix Time - Inserts the current daettime in Unix epoch format</li>
+<li>Insert Custom Date - Inserts the current datetime in one of many custom formats.</li>
+</ul><h3>Encryption/Decryption</h3>
+
+<p>What if you wanted to encrypt piece of text in the file that only you should be able to read it back? Then these commands are for you.</p>
+
+<ul>
+<li>Encrypt Text - Encrypts the current selected text or whole editor using a password of your choice</li>
+<li>Decrypt Text - Decrypts the previously encrypted text</li>
+</ul><h3>Transform Chars/String</h3>
+
+<ul>
+<li>Convert Double Quotes to Single Quotes</li>
+<li>Convert Single Quotes to Double Quotes</li>
+<li>Swap Quotes</li>
+<li>Convert &lt; and &gt; to Xml safe chars</li>
+<li>Convert &lt; and &gt; (Xml Safe chars) to &lt; and &gt;</li>
+<li>Convert Text to Camel Case</li>
+<li>Invert Case</li>
+<li>To Lower Case</li>
+<li>To Upper Case</li>
+<li>To Sentence Case</li>
+</ul>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Honey maintained by <a href="https://github.com/brsanthu">brsanthu</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
