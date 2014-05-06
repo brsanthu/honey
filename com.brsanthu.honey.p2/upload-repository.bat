@@ -1,1 +1,0 @@
-curl -T target/com.brsanthu.honey.p2.zip -ubrsanthu:63faeeabaa124721151edb0c59bc2890a0a64b11 https://api.bintray.com/content/brsanthu/p2-repository/honey/latest
