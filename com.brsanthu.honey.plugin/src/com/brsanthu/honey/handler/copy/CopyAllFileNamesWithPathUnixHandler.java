@@ -1,10 +1,9 @@
 package com.brsanthu.honey.handler.copy;
-import static com.brsanthu.eclipse.common.ui.util.EclipseUiUtils.getEditorReferences;
-import static com.brsanthu.eclipse.common.ui.util.EclipseUiUtils.getFileNameWithPath;
 import static org.apache.commons.lang3.StringUtils.isNotEmpty;
 import static org.apache.commons.lang3.StringUtils.join;
 import static org.apache.commons.lang3.StringUtils.replace;
 
+import static com.brsanthu.eclipseutils.EclipseUtils.*;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;

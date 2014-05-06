@@ -1,6 +1,6 @@
 package com.brsanthu.honey.handler.insert;
 
-import static com.brsanthu.eclipse.common.ui.util.EclipseUiUtils.getSelection;
+import static com.brsanthu.eclipseutils.EclipseUtils.getSelection;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -17,7 +17,7 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Shell;
 
-import com.brsanthu.eclipse.common.ui.dialog.OkCancelDialog;
+import com.brsanthu.eclipseutils.widgets.OkCancelDialog;
 
 //This is to fix the bug
 public class InsertCustomDateDialog extends OkCancelDialog {

@@ -1,9 +1,9 @@
 package com.brsanthu.honey.handler.bookmark;
 
-import static com.brsanthu.eclipse.common.ui.util.EclipseUiUtils.getActivePage;
 import static org.apache.commons.lang3.StringUtils.isEmpty;
 import static org.apache.commons.lang3.StringUtils.isNotEmpty;
 
+import static com.brsanthu.eclipseutils.EclipseUtils.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;

@@ -1,12 +1,9 @@
 package com.brsanthu.honey.handler.bookmark;
 
-import static com.brsanthu.eclipse.common.ui.util.EclipseUiUtils.setTimedStatusErrorMessage;
-
 import java.util.List;
 
 import org.eclipse.core.resources.IMarker;
-
-
+import static com.brsanthu.eclipseutils.EclipseUtils.*;
 public class GotoNextBookmarkInFileHandler extends AbstractBookmarkHandler {
 
     @Override
@@ -15,7 +12,7 @@ public class GotoNextBookmarkInFileHandler extends AbstractBookmarkHandler {
     	IMarker bookmarkToGoto = null;
         List<IMarker> bookmarks = getCurrentEditorBookmarks();
         if (bookmarks.isEmpty()) {
-            setTimedStatusErrorMessage("There are no bookmarks in File!");
+            setTimedErrorMessage("There are no bookmarks in File!");
             return;
         }
         

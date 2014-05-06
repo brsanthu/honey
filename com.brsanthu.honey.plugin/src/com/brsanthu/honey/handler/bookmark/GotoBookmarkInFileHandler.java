@@ -1,12 +1,10 @@
 package com.brsanthu.honey.handler.bookmark;
 
-import static com.brsanthu.eclipse.common.ui.util.EclipseUiUtils.setTimedStatusErrorMessage;
-
 import java.util.List;
 
 import org.eclipse.core.resources.IMarker;
 
-
+import static com.brsanthu.eclipseutils.EclipseUtils.*;
 public class GotoBookmarkInFileHandler extends AbstractBookmarkHandler {
 
     @Override
@@ -17,7 +15,7 @@ public class GotoBookmarkInFileHandler extends AbstractBookmarkHandler {
             return;
         }
         if (bookmarks.size() < getBookmarkNumber()) {
-            setTimedStatusErrorMessage("Specified numbered bookmark is defined in the file!");
+            setTimedErrorMessage("Specified numbered bookmark is defined in the file!");
             return;
         }
         

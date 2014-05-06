@@ -173,7 +173,7 @@
       </command>
       <command
             id="com.brsanthu.honey.command.openBookmark"
-            name="Open Bookmark">
+            name="Open Bookmarks">
       </command>
       <command
             id="com.brsanthu.honey.command.gotoFastmark"
@@ -202,6 +202,10 @@
       <command
             id="com.brsanthu.honey.command.gotoPrevBookmarkInFile"
             name="Goto Prev Bookmark in File">
+      </command>
+      <command
+            id="com.brsanthu.honey.command.pasteTextAsJavaString"
+            name="Paste Text as Java String">
       </command>
    </extension>
    <extension
@@ -299,11 +303,11 @@
             commandId="com.brsanthu.honey.command.copyFileNamesWithPathWindows">
       </handler>
       <handler
-            class="com.brsanthu.honey.handler.replace.EncryptTextHandler"
+            class="com.brsanthu.honey.handler.encrypt.EncryptTextHandler"
             commandId="com.brsanthu.honey.command.encryptText">
       </handler>
       <handler
-            class="com.brsanthu.honey.handler.replace.DecryptTextHandler"
+            class="com.brsanthu.honey.handler.encrypt.DecryptTextHandler"
             commandId="com.brsanthu.honey.command.decryptText">
       </handler>
       <handler
@@ -384,6 +388,15 @@
       <handler
             class="com.brsanthu.honey.handler.bookmark.GotoPrevBookmarkInFileHandler"
             commandId="com.brsanthu.honey.command.gotoPrevBookmarkInFile">
+         <activeWhen>
+            <reference
+                  definitionId="com.brsanthu.honey.definition.currentEditorIsTextEditor">
+            </reference>
+         </activeWhen>
+      </handler>
+      <handler
+            class="com.brsanthu.honey.handler.paste.PasteTextAsJavaStringHandler"
+            commandId="com.brsanthu.honey.command.pasteTextAsJavaString">
          <activeWhen>
             <reference
                   definitionId="com.brsanthu.honey.definition.currentEditorIsTextEditor">

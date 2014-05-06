@@ -1,17 +1,21 @@
-package com.brsanthu.honey.handler.replace;
-import static com.brsanthu.eclipse.common.ui.util.EclipseUiUtils.isOk;
-import static com.brsanthu.eclipse.common.ui.util.EclipseUiUtils.openQuestion;
+package com.brsanthu.honey.handler.encrypt;
 import static org.apache.commons.lang3.StringUtils.isEmpty;
+import static com.brsanthu.eclipseutils.EclipseUtils.*;
 
-import com.brsanthu.eclipse.common.ui.dialog.UsernamePasswordDialog;
+import com.brsanthu.eclipseutils.widgets.UsernamePasswordDialog;
 import com.brsanthu.honey.handler.AbstractTextReplaceHandler;
 import com.brsanthu.honey.handler.TextChangeResponse;
 import com.brsanthu.honey.handler.TextChangeResponse.Mode;
+import com.brsanthu.utils.Utils;
 
 public class EncryptTextHandler extends AbstractTextReplaceHandler {
     private static final String INSTRUCTION = "Enter the password to encrypt the text. Please be aware that if you " +
     		"forget this password, you will not be able to decrypt the text";
 
+    //Whoever maintains this code, don't change the salt. If you do, you will break
+    //all the encrypted text that users would have encrypted.
+    public static final String SALT = "342B15BFD381722C";
+    
     @Override
     public TextChangeResponse executeReplaceCommand(String selectedText) {
         TextChangeResponse textChangeResponse = null;
@@ -32,8 +36,7 @@ public class EncryptTextHandler extends AbstractTextReplaceHandler {
         }
 
         try {
-            AESEncrypter encryptor = new AESEncrypter(password);
-            textChangeResponse.setNewText(encryptor.encrypt(selectedText));
+            textChangeResponse.setNewText(Utils.encrypt(password, SALT, selectedText));
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

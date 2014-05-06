@@ -1,6 +1,5 @@
 package com.brsanthu.honey.handler.copy;
-import static com.brsanthu.eclipse.common.ui.util.EclipseUiUtils.getClipboard;
-
+import static com.brsanthu.eclipseutils.EclipseUtils.*;
 import com.brsanthu.honey.handler.AbstractTextCopyHandler;
 
 public class CopyAppendWithNewLineHandler extends AbstractTextCopyHandler {
@@ -11,6 +10,6 @@ public class CopyAppendWithNewLineHandler extends AbstractTextCopyHandler {
             return null;
         }
         
-        return getClipboard() +  "\n"  +selectedText;
+        return getClipboardText() +  "\n"  +selectedText;
     }
 }

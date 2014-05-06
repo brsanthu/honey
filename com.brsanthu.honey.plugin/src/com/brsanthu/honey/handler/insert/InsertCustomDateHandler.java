@@ -1,8 +1,8 @@
 package com.brsanthu.honey.handler.insert;
-import static com.brsanthu.eclipse.common.ui.util.EclipseUiUtils.isOk;
-
 import com.brsanthu.honey.handler.AbstractTextReplaceHandler;
 import com.brsanthu.honey.handler.TextChangeResponse;
+
+import static com.brsanthu.eclipseutils.EclipseUtils.*;
 
 public class InsertCustomDateHandler extends AbstractTextReplaceHandler {
 

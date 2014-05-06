@@ -1,8 +1,5 @@
 package com.brsanthu.honey.handler;
 
-import static com.brsanthu.eclipse.common.ui.util.EclipseUiUtils.getActiveEditor;
-import static com.brsanthu.eclipse.common.ui.util.EclipseUiUtils.setStatusErrorMessage;
-
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
@@ -10,7 +7,9 @@ import org.eclipse.core.commands.common.NotDefinedException;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.IEditorPart;
 
-import com.brsanthu.eclipse.common.ui.util.EclipseUiUtils;
+import com.brsanthu.eclipseutils.EclipseUtils;
+
+import static com.brsanthu.eclipseutils.EclipseUtils.*;
 
 public abstract class AbstractEditorHandler extends AbstractHandler {
     private ExecutionEvent event;
@@ -22,7 +21,7 @@ public abstract class AbstractEditorHandler extends AbstractHandler {
         this.event = event;
         IEditorPart editorPart = getActiveEditor();
         if (editorPart == null) {
-            setStatusErrorMessage("Couldn't get the current text editor.");
+        	setTimedErrorMessage("Couldn't get the current text editor.");
             return  null;
         }
         
@@ -54,7 +53,7 @@ public abstract class AbstractEditorHandler extends AbstractHandler {
     }
     
     public Shell getShell() {
-        return EclipseUiUtils.getShell(event);
+        return EclipseUtils.getShell(event);
     }
 
     public abstract void executeCommand();

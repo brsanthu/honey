@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+	<feature id="com.brsanthu.honey.feature">
+		<category name="com.brsanthu.honey.category.id" />
+	</feature>
+	<category-def name="com.brsanthu.honey.category.id" label="Honey">
+		<description>
+			Sweet set of text commands for your Eclipse text editor
+		</description>
+	</category-def>
+</site>

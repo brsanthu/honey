@@ -5,7 +5,7 @@ import org.eclipse.jface.viewers.ColumnLabelProvider;
 import org.eclipse.jface.viewers.ITreeContentProvider;
 import org.eclipse.swt.widgets.Shell;
 
-import com.brsanthu.eclipse.common.ui.dialog.filtertreepopup.FilterTreePopupDialog;
+import com.brsanthu.eclipseutils.widgets.filtertree.FilterTreePopupDialog;
 
 public class OpenBookmarksDialog extends FilterTreePopupDialog {
 

@@ -1,9 +1,6 @@
 package com.brsanthu.honey.handler;
 
-import static com.brsanthu.eclipse.common.ui.util.EclipseUiUtils.getActiveEditor;
-import static com.brsanthu.eclipse.common.ui.util.EclipseUiUtils.setTimedStatusErrorMessage;
-
-
+import static com.brsanthu.eclipseutils.EclipseUtils.*;
 public abstract class AbstractTextReplaceHandler extends AbstractTextHandler {
 
     @Override
@@ -27,7 +24,7 @@ public abstract class AbstractTextReplaceHandler extends AbstractTextHandler {
         }
         
         if (!result) {
-            setTimedStatusErrorMessage("Command '" + getCommandName() + "' didn't make any changes to the editor.");
+            setTimedErrorMessage("Command '" + getCommandName() + "' didn't make any changes to the editor.");
         }
         
         getActiveEditor().setFocus();

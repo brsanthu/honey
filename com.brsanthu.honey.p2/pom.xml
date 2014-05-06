@@ -8,6 +8,6 @@
 		<relativePath>../com.brsanthu.honey</relativePath>
 	</parent>
 
-	<artifactId>com.brsanthu.honey.feature</artifactId>
-	<packaging>eclipse-feature</packaging>
+	<artifactId>com.brsanthu.honey.p2</artifactId>
+	<packaging>eclipse-repository</packaging>
 </project>

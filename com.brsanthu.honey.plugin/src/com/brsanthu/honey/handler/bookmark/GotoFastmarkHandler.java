@@ -1,9 +1,8 @@
 package com.brsanthu.honey.handler.bookmark;
 
-import static com.brsanthu.eclipse.common.ui.util.EclipseUiUtils.setTimedStatusErrorMessage;
-
 import org.eclipse.core.resources.IMarker;
 
+import static com.brsanthu.eclipseutils.EclipseUtils.*;
 public class GotoFastmarkHandler extends AbstractFastmarkHandler {
 
 	@Override
@@ -12,7 +11,7 @@ public class GotoFastmarkHandler extends AbstractFastmarkHandler {
 		if (fastmark != null) {
 			openBookmark(fastmark);
 		} else {
-			setTimedStatusErrorMessage("Fastmark " + getFastmarkNumber() + " is not set!");
+			setTimedErrorMessage("Fastmark " + getFastmarkNumber() + " is not set!");
 		}
 	}
 

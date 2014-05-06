@@ -1,6 +1,5 @@
 package com.brsanthu.honey.handler;
-
-import static com.brsanthu.eclipse.common.ui.util.EclipseUiUtils.getTextSelection;
+import static com.brsanthu.eclipseutils.EclipseUtils.getTextSelection;
 import static org.apache.commons.lang3.StringUtils.isEmpty;
 
 import org.eclipse.core.resources.IFile;
@@ -17,7 +16,7 @@ import org.eclipse.ui.part.FileEditorInput;
 import org.eclipse.ui.texteditor.IDocumentProvider;
 import org.eclipse.ui.texteditor.ITextEditor;
 
-import com.brsanthu.eclipse.common.ui.util.EclipseUiUtils;
+import com.brsanthu.eclipseutils.EclipseUtils;
 
 public class HoneyEditor {
     
@@ -151,7 +150,7 @@ public class HoneyEditor {
     }
     
     public String getFileNameWithPath() {
-        return EclipseUiUtils.getFileNameWithPath(editor.getEditorInput());
+        return EclipseUtils.getFileNameWithPath(editor.getEditorInput());
     }
     
     public IResource getResource() {

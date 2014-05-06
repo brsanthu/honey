@@ -1,11 +1,13 @@
-package com.brsanthu.honey.handler.replace;
-import static com.brsanthu.eclipse.common.ui.util.EclipseUiUtils.isOk;
-import static com.brsanthu.eclipse.common.ui.util.EclipseUiUtils.openQuestion;
+package com.brsanthu.honey.handler.encrypt;
+import static com.brsanthu.eclipseutils.EclipseUtils.isOk;
+import static com.brsanthu.eclipseutils.EclipseUtils.openQuestion;
 import static org.apache.commons.lang3.StringUtils.isEmpty;
 
-import com.brsanthu.eclipse.common.ui.dialog.UsernamePasswordDialog;
+import com.brsanthu.eclipseutils.widgets.UsernamePasswordDialog;
 import com.brsanthu.honey.handler.TextChangeResponse;
 import com.brsanthu.honey.handler.TextChangeResponse.Mode;
+import com.brsanthu.utils.AesEncrypter;
+import com.brsanthu.utils.Utils;
 
 /**
  * Code in this class is from http://stackoverflow.com/questions/992019/java-256-bit-aes-password-based-encryption.
@@ -38,8 +40,7 @@ public class DecryptTextHandler extends EncryptTextHandler {
             }
                
             try {
-                AESEncrypter encryptor = new AESEncrypter(password);
-                textChangeResponse.setNewText(encryptor.decrypt(selectedText));
+                textChangeResponse.setNewText(Utils.decrypt(password, EncryptTextHandler.SALT, selectedText));
                 break;
             } catch (Exception e) {
                 passwordError = true;
@@ -49,7 +50,7 @@ public class DecryptTextHandler extends EncryptTextHandler {
     }
     
     public String promptUserForPassword(Boolean passwordError) {
-        UsernamePasswordDialog dialog = new UsernamePasswordDialog(getShell(), "Enter Password", INSTRUCTION, false, false);
+    	UsernamePasswordDialog dialog = new UsernamePasswordDialog(getShell(), "Enter Password", INSTRUCTION, false, false);
         if (passwordError) {
             dialog.setErrorMessage("Couldn't decrypt the text using specified password. " +
             		"Please make sure you have selected only but all encrypted text and try again with correct password");
