@@ -4,7 +4,7 @@ import static com.brsanthu.eclipseutils.EclipseUtils.*;
 public abstract class AbstractTextReplaceHandler extends AbstractTextHandler {
 
     @Override
-    public void executeCommand(String selectedText) {
+    public void executeCommand(String selectedText) throws Exception {
         TextChangeResponse response = executeReplaceCommand(selectedText);
         if (response == null) {
             return;
@@ -30,5 +30,5 @@ public abstract class AbstractTextReplaceHandler extends AbstractTextHandler {
         getActiveEditor().setFocus();
     }
     
-    public abstract TextChangeResponse executeReplaceCommand(String selectedText);
+    public abstract TextChangeResponse executeReplaceCommand(String selectedText) throws Exception;
 }

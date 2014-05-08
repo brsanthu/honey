@@ -11,7 +11,6 @@ public class TextChangeResponse {
     private Mode mode = Mode.REPLACE_SELECTED;
     private String newText = null;
     
-    
     public TextChangeResponse(Mode mode) {
         super();
         this.mode = mode;
@@ -20,6 +19,7 @@ public class TextChangeResponse {
     public TextChangeResponse(String newText) {
         this(Mode.REPLACE_SELECTED, newText);
     }
+    
     public TextChangeResponse(Mode mode, String newText) {
         super();
         this.mode = mode;

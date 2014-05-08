@@ -8,6 +8,19 @@
             name="Text Editing"
             id="com.brsanthu.honey.command.category.textEditing">
       </category>
+      <category
+            name="Text Editing/Paste"
+            id="com.brsanthu.honey.command.category.paste">
+      </category>
+      <category
+            id="com.brsanthu.honey.command.category.endecoding"
+            name="Encoding/Decoding Text">
+      </category>
+      <category
+            id="com.brsanthu.honey.command.category.escaping"
+            name="Escaping/Unescaping Text">
+      </category>
+      
       <command
             categoryId="com.brsanthu.honey.command.category.textEditing"
             id="com.brsanthu.honey.command.convertDoubleQuotesToSingleQuotes"
@@ -207,6 +220,88 @@
             id="com.brsanthu.honey.command.pasteTextAsJavaString"
             name="Paste Text as Java String">
       </command>
+      <command
+            categoryId="com.brsanthu.honey.command.category.paste"
+            id="com.brsanthu.honey.command.pasteTextAsUnixPath"
+            name="Paste Text as Unix Path">
+      </command>
+      <command
+            categoryId="com.brsanthu.honey.command.category.paste"
+            id="com.brsanthu.honey.command.pasteTextAsWindowsPath"
+            name="Paste Text as Windows Path">
+      </command>
+      <command
+            categoryId="com.brsanthu.honey.command.category.textEditing"
+            defaultHandler="com.brsanthu.honey.handler.font.IncreaseFontSizeHandler"
+            id="com.brsanthu.honey.command.increaseFontSize"
+            name="Increase Font Size">
+      </command>
+      <command
+            categoryId="com.brsanthu.honey.command.category.textEditing"
+            defaultHandler="com.brsanthu.honey.handler.font.DecreaseFontSizeHandler"
+            id="com.brsanthu.honey.command.decreaseFontSize"
+            name="Decrease Font Size">
+      </command>
+      <command
+            categoryId="com.brsanthu.honey.command.category.endecoding"
+            id="com.brsanthu.honey.command.base64Encode"
+            name="Base64 Encode">
+      </command>
+      <command
+            categoryId="com.brsanthu.honey.command.category.endecoding"
+            id="com.brsanthu.honey.command.base64Decode"
+            name="Base64 Decode">
+      </command>
+      <command
+            categoryId="com.brsanthu.honey.command.category.endecoding"
+            id="com.brsanthu.honey.command.hexDecode"
+            name="Hex Decode">
+      </command>
+      <command
+            categoryId="com.brsanthu.honey.command.category.endecoding"
+            id="com.brsanthu.honey.command.hexEncode"
+            name="Hex Encode">
+      </command>
+      <command
+            categoryId="com.brsanthu.honey.command.category.endecoding"
+            id="com.brsanthu.honey.command.urlDecode"
+            name="Url Decode">
+      </command>
+      <command
+            categoryId="com.brsanthu.honey.command.category.endecoding"
+            id="com.brsanthu.honey.command.urlEncode"
+            name="Url Encode">
+      </command>
+      <command
+            categoryId="com.brsanthu.honey.command.category.escaping"
+            id="com.brsanthu.honey.command.htmlEscape"
+            name="Html Escape">
+      </command>
+      <command
+            categoryId="com.brsanthu.honey.command.category.escaping"
+            id="com.brsanthu.honey.command.htmlUnescape"
+            name="Html Unescape">
+      </command>
+      <command
+            categoryId="com.brsanthu.honey.command.category.escaping"
+            id="com.brsanthu.honey.command.xmlEscape"
+            name="Xml Escape">
+      </command>
+      <command
+            categoryId="com.brsanthu.honey.command.category.escaping"
+            id="com.brsanthu.honey.command.xmlUnescape"
+            name="Xml Unescape">
+      </command>
+      <command
+            categoryId="com.brsanthu.honey.command.category.escaping"
+            id="com.brsanthu.honey.command.javaEscape"
+            name="Java Escape">
+      </command>
+      <command
+            categoryId="com.brsanthu.honey.command.category.escaping"
+            id="com.brsanthu.honey.command.javaUnescape"
+            name="Java Unescape">
+      </command>
    </extension>
    <extension
          point="org.eclipse.ui.handlers">
@@ -337,7 +432,7 @@
          </activeWhen>
       </handler>
       <handler
-            class="com.brsanthu.honey.handler.copy.CopyBookmarkedLinesHandler"
+            class="com.brsanthu.honey.handler.bookmark.CopyBookmarkedLinesInFileHandler"
             commandId="com.brsanthu.honey.command.copyBookmarkedLines">
          <activeWhen>
             <reference
@@ -403,6 +498,132 @@
             </reference>
          </activeWhen>
       </handler>
+      <handler
+            class="com.brsanthu.honey.handler.endecode.Base64EncodeHandler"
+            commandId="com.brsanthu.honey.command.base64Encode">
+         <activeWhen>
+            <reference
+                  definitionId="com.brsanthu.honey.definition.currentEditorIsTextEditor">
+            </reference>
+         </activeWhen>
+      </handler>
+      <handler
+            class="com.brsanthu.honey.handler.endecode.Base64DecodeHandler"
+            commandId="com.brsanthu.honey.command.base64Decode">
+         <activeWhen>
+            <reference
+                  definitionId="com.brsanthu.honey.definition.currentEditorIsTextEditor">
+            </reference>
+         </activeWhen>
+      </handler>
+      <handler
+            class="com.brsanthu.honey.handler.endecode.HexDecodeHandler"
+            commandId="com.brsanthu.honey.command.hexDecode">
+         <activeWhen>
+            <reference
+                  definitionId="com.brsanthu.honey.definition.currentEditorIsTextEditor">
+            </reference>
+         </activeWhen>
+      </handler>
+      <handler
+            class="com.brsanthu.honey.handler.endecode.HexEncodeHandler"
+            commandId="com.brsanthu.honey.command.hexEncode">
+         <activeWhen>
+            <reference
+                  definitionId="com.brsanthu.honey.definition.currentEditorIsTextEditor">
+            </reference>
+         </activeWhen>
+      </handler>
+      <handler
+            class="com.brsanthu.honey.handler.endecode.UrlDecodeHandler"
+            commandId="com.brsanthu.honey.command.urlDecode">
+         <activeWhen>
+            <reference
+                  definitionId="com.brsanthu.honey.definition.currentEditorIsTextEditor">
+            </reference>
+         </activeWhen>
+      </handler>
+      <handler
+            class="com.brsanthu.honey.handler.endecode.UrlEncodeHandler"
+            commandId="com.brsanthu.honey.command.urlEncode">
+         <activeWhen>
+            <reference
+                  definitionId="com.brsanthu.honey.definition.currentEditorIsTextEditor">
+            </reference>
+         </activeWhen>
+      </handler>
+      <handler
+            class="com.brsanthu.honey.handler.escape.HtmlEscapeHandler"
+            commandId="com.brsanthu.honey.command.htmlEscape">
+         <activeWhen>
+            <reference
+                  definitionId="com.brsanthu.honey.definition.currentEditorIsTextEditor">
+            </reference>
+         </activeWhen>
+      </handler>
+      <handler
+            class="com.brsanthu.honey.handler.escape.HtmlUnescapeHandler"
+            commandId="com.brsanthu.honey.command.htmlUnescape">
+         <activeWhen>
+            <reference
+                  definitionId="com.brsanthu.honey.definition.currentEditorIsTextEditor">
+            </reference>
+         </activeWhen>
+      </handler>
+      <handler
+            class="com.brsanthu.honey.handler.escape.XmlEscapeHandler"
+            commandId="com.brsanthu.honey.command.xmlEscape">
+         <activeWhen>
+            <reference
+                  definitionId="com.brsanthu.honey.definition.currentEditorIsTextEditor">
+            </reference>
+         </activeWhen>
+      </handler>
+      <handler
+            class="com.brsanthu.honey.handler.escape.XmlUnescapeHandler"
+            commandId="com.brsanthu.honey.command.xmlUnescape">
+         <activeWhen>
+            <reference
+                  definitionId="com.brsanthu.honey.definition.currentEditorIsTextEditor">
+            </reference>
+         </activeWhen>
+      </handler>
+      <handler
+            class="com.brsanthu.honey.handler.escape.JavaEscapeHandler"
+            commandId="com.brsanthu.honey.command.javaEscape">
+         <activeWhen>
+            <reference
+                  definitionId="com.brsanthu.honey.definition.currentEditorIsTextEditor">
+            </reference>
+         </activeWhen>
+      </handler>
+      <handler
+            class="com.brsanthu.honey.handler.escape.JavaUnescapeHandler"
+            commandId="com.brsanthu.honey.command.javaUnescape">
+         <activeWhen>
+            <reference
+                  definitionId="com.brsanthu.honey.definition.currentEditorIsTextEditor">
+            </reference>
+         </activeWhen>
+      </handler>
+      <handler
+            class="com.brsanthu.honey.handler.paste.PasteTextAsUnixPathHandler"
+            commandId="com.brsanthu.honey.command.pasteTextAsUnixPath">
+         <activeWhen>
+            <reference
+                  definitionId="com.brsanthu.honey.definition.currentEditorIsTextEditor">
+            </reference>
+         </activeWhen>
+      </handler>
+      <handler
+            class="com.brsanthu.honey.handler.paste.PasteTextAsWindowsPathHandler"
+            commandId="com.brsanthu.honey.command.pasteTextAsWindowsPath">
+         <activeWhen>
+            <reference
+                  definitionId="com.brsanthu.honey.definition.currentEditorIsTextEditor">
+            </reference>
+         </activeWhen>
+      </handler>
    </extension>
    <extension
          point="org.eclipse.core.expressions.definitions">
@@ -415,6 +636,21 @@
             </instanceof>
          </with>
       </definition>
+   </extension>
+   <extension
+         point="org.eclipse.ui.bindings">
+      <key
+            commandId="com.brsanthu.honey.command.increaseFontSize"
+            contextId="org.eclipse.ui.textEditorScope"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+            sequence="CTRL++">
+      </key>
+      <key
+            commandId="com.brsanthu.honey.command.decreaseFontSize"
+            contextId="org.eclipse.ui.textEditorScope"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+            sequence="CTRL+-">
+      </key>
    </extension>
 
 </plugin>

@@ -13,41 +13,44 @@ import org.eclipse.jface.viewers.ISelectionProvider;
 import org.eclipse.ui.IEditorInput;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.part.FileEditorInput;
+import org.eclipse.ui.texteditor.AbstractTextEditor;
 import org.eclipse.ui.texteditor.IDocumentProvider;
 import org.eclipse.ui.texteditor.ITextEditor;
+import org.eclipse.ui.texteditor.TextViewerDeleteLineTarget;
 
 import com.brsanthu.eclipseutils.EclipseUtils;
 
 public class HoneyEditor {
     
     private IEditorPart editor = null;
-    private IDocument doc = null;
+    private ITextEditor textEditor = null;
+    private IDocument textDocument = null;
     
     public HoneyEditor(IEditorPart editor) {
         super();
         this.editor = editor;
-        doc = getDocument();
+        if (editor instanceof ITextEditor) {
+        	textEditor = (ITextEditor) editor;
+        }
+        textDocument = getDocument();
     }
     
-    
     public void selectAll() {
-        if (editor instanceof ITextEditor) {
-            ((ITextEditor) editor).setHighlightRange(0, doc.getLength(), false);
-        }
+        textEditor.setHighlightRange(0, textDocument.getLength(), false);
     }
     
     public Boolean setContents(String value) {
-        doc.set(value);
+        textDocument.set(value);
         return true;
     }
     
     public String getContents() {
-        return doc.get();
+        return textDocument.get();
     }
     
     public String getLine(int lineNumber) {
         try {
-            return doc.get(doc.getLineOffset(lineNumber), doc.getLineLength(lineNumber));
+            return textDocument.get(textDocument.getLineOffset(lineNumber), textDocument.getLineLength(lineNumber));
         } catch (BadLocationException e) {
             e.printStackTrace();
             return null;
@@ -66,7 +69,7 @@ public class HoneyEditor {
         }
 
         try {
-            doc.replace(selection.getOffset(), selection.getLength(), newText);
+            textDocument.replace(selection.getOffset(), selection.getLength(), newText);
             ((ITextEditor) editor).selectAndReveal(selection.getOffset(), isEmpty(newText)?0:newText.length());
         } catch (BadLocationException e) {
             e.printStackTrace();
@@ -156,4 +159,20 @@ public class HoneyEditor {
     public IResource getResource() {
         return (IResource) editor.getEditorInput().getAdapter(IFile.class);
     }
+
+//	public void getDeleteLine(int lineNumber) {
+//        try {
+//        	if (textEditor instanceof AbstractTextEditor) {
+//        		textEditor.gets
+//        	}
+//        	
+//        	new TextViewerDeleteLineTarget(textEditor)
+//        	textEditor.getAdapter(getClass())
+//        	Object adapter = editor.getAdapter(TextViewerDeleteLineTarget.class);
+//            //return textDocument.get(textDocument.getLineOffset(lineNumber), textDocument.getLineLength(lineNumber))
+//        } catch (BadLocationException e) {
+//            e.printStackTrace();
+//            //return null;
+//        }
+//	}
 }

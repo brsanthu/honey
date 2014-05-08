@@ -4,10 +4,12 @@ import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.commands.common.NotDefinedException;
+import org.eclipse.core.runtime.Status;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.IEditorPart;
 
 import com.brsanthu.eclipseutils.EclipseUtils;
+import com.brsanthu.honey.Activator;
 
 import static com.brsanthu.eclipseutils.EclipseUtils.*;
 
@@ -26,7 +28,13 @@ public abstract class AbstractEditorHandler extends AbstractHandler {
         }
         
         editor = new HoneyEditor(editorPart);
-        executeCommand();
+        try {
+        	executeCommand();
+        } catch (Exception e) {
+        	String message = "Exception while executing the command " + getCommandName();
+        	Activator.getDefault().logError(message, e);
+			EclipseUtils.setTimedErrorMessage(message + " [" + e.toString() + "]");
+        }
         
         return null;
     }
@@ -56,6 +64,6 @@ public abstract class AbstractEditorHandler extends AbstractHandler {
         return EclipseUtils.getShell(event);
     }
 
-    public abstract void executeCommand();
+    public abstract void executeCommand() throws Exception;
     
 }

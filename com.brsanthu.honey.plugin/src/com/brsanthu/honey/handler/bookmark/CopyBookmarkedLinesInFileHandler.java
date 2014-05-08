@@ -1,13 +1,13 @@
-package com.brsanthu.honey.handler.copy;
+package com.brsanthu.honey.handler.bookmark;
 import java.util.List;
 
 import org.eclipse.core.resources.IMarker;
 import org.eclipse.ui.texteditor.MarkerUtilities;
 
 import com.brsanthu.honey.handler.AbstractTextCopyHandler;
-import com.brsanthu.honey.handler.bookmark.ClearBookmarksHandler;
+
 import static com.brsanthu.eclipseutils.EclipseUtils.*;
-public class CopyBookmarkedLinesHandler extends AbstractTextCopyHandler {
+public class CopyBookmarkedLinesInFileHandler extends AbstractTextCopyHandler {
 
     @Override
     public String executeCopyCommand(String selectedText) {

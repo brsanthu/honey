@@ -1,5 +1,6 @@
 package com.brsanthu.honey;
 
+import org.eclipse.core.runtime.Status;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleContext;
@@ -57,5 +58,9 @@ public class Activator extends AbstractUIPlugin {
 	 */
 	public static ImageDescriptor getImageDescriptor(String path) {
 		return imageDescriptorFromPlugin(PLUGIN_ID, path);
+	}
+
+	public void logError(String message, Exception e) {
+		getLog().log(new Status(Status.ERROR, Activator.PLUGIN_ID, message, e));
 	}
 }
