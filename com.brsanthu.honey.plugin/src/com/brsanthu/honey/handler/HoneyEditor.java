@@ -13,10 +13,9 @@ import org.eclipse.jface.viewers.ISelectionProvider;
 import org.eclipse.ui.IEditorInput;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.part.FileEditorInput;
-import org.eclipse.ui.texteditor.AbstractTextEditor;
+import org.eclipse.ui.texteditor.DeleteLineAction;
 import org.eclipse.ui.texteditor.IDocumentProvider;
 import org.eclipse.ui.texteditor.ITextEditor;
-import org.eclipse.ui.texteditor.TextViewerDeleteLineTarget;
 
 import com.brsanthu.eclipseutils.EclipseUtils;
 
@@ -160,19 +159,16 @@ public class HoneyEditor {
         return (IResource) editor.getEditorInput().getAdapter(IFile.class);
     }
 
-//	public void getDeleteLine(int lineNumber) {
-//        try {
-//        	if (textEditor instanceof AbstractTextEditor) {
-//        		textEditor.gets
-//        	}
-//        	
-//        	new TextViewerDeleteLineTarget(textEditor)
-//        	textEditor.getAdapter(getClass())
-//        	Object adapter = editor.getAdapter(TextViewerDeleteLineTarget.class);
-//            //return textDocument.get(textDocument.getLineOffset(lineNumber), textDocument.getLineLength(lineNumber))
-//        } catch (BadLocationException e) {
-//            e.printStackTrace();
-//            //return null;
-//        }
-//	}
+	public void getDeleteLine(int lineNumber) throws BadLocationException {
+		textEditor.getSelectionProvider().setSelection(new TextSelection(textDocument.getLineOffset(lineNumber), 1));
+		DeleteLineAction deleteLineAction = new DeleteLineAction(textEditor, DeleteLineAction.WHOLE, false);
+		deleteLineAction.run();
+//		//deleteLineAction.dele
+//		
+//    	if (textEditor instanceof AbstractTextEditor) {
+//    		
+//        	TextViewerDeleteLineTarget target = (TextViewerDeleteLineTarget) editor.getAdapter(TextViewerDeleteLineTarget.class);
+//        	target.deleteLine(textDocument, textDocument.getLineOffset(lineNumber), 1, DeleteLineAction.WHOLE, false);
+//    	}
+	}
 }

@@ -20,12 +20,8 @@ public class EncryptTextHandler extends AbstractTextReplaceHandler {
     public TextChangeResponse executeReplaceCommand(String selectedText) {
         TextChangeResponse textChangeResponse = null;
         if (isEmpty(selectedText)) {
-            if (openQuestion("Encrypt whole file?", "No text is selected. Do you want to encrypt whole file?")) {
-                selectedText = getEditor().getContents();
-                textChangeResponse = new TextChangeResponse(Mode.REPLACE_ALL);
-            } else {
-                return null;
-            }
+            selectedText = getEditor().getContents();
+            textChangeResponse = new TextChangeResponse(Mode.REPLACE_ALL);
         } else {
             textChangeResponse = new TextChangeResponse(Mode.REPLACE_SELECTED);
         }

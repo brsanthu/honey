@@ -5,175 +5,230 @@
    <extension
          point="org.eclipse.ui.commands">
       <category
-            name="Text Editing"
-            id="com.brsanthu.honey.command.category.textEditing">
+            name="Honey/Join-Split"
+            id="com.brsanthu.honey.command.category.joinsplit">
       </category>
       <category
-            name="Text Editing/Paste"
+            name="Honey/Bookmarks"
+            id="com.brsanthu.honey.command.category.bookmark">
+      </category>
+      <category
+            name="Honey/Copy"
+            id="com.brsanthu.honey.command.category.copy">
+      </category>
+      <category
+            name="Honey/Insert"
+            id="com.brsanthu.honey.command.category.insert">
+      </category>
+      <category
+            name="Honey/Delete"
+            id="com.brsanthu.honey.command.category.delete">
+      </category>
+      <category
+            name="Honey/Encrypt-Decrypt"
+            id="com.brsanthu.honey.command.category.endecrypt">
+      </category>
+      <category
+            name="Honey/Convert"
+            id="com.brsanthu.honey.command.category.convert">
+      </category>
+      <category
+            name="Honey/Fastmarks"
+            id="com.brsanthu.honey.command.category.fastmark">
+      </category>
+      <category
+            name="Honey/Fonts"
+            id="com.brsanthu.honey.command.category.font">
+      </category>
+      <category
+            name="Honey/Paste"
             id="com.brsanthu.honey.command.category.paste">
       </category>
       <category
             id="com.brsanthu.honey.command.category.endecoding"
-            name="Encoding/Decoding Text">
+            name="Honey/Encoding-Decoding Text">
       </category>
       <category
             id="com.brsanthu.honey.command.category.escaping"
-            name="Escaping/Unescaping Text">
+            name="Honey/Escaping-Unescaping Text">
       </category>
       
       <command
-            categoryId="com.brsanthu.honey.command.category.textEditing"
+            categoryId="com.brsanthu.honey.command.category.convert"
             id="com.brsanthu.honey.command.convertDoubleQuotesToSingleQuotes"
             name="Convert &quot; to &apos;">
       </command>
       <command
-            categoryId="com.brsanthu.honey.command.category.textEditing"
+            categoryId="com.brsanthu.honey.command.category.convert"
             id="com.brsanthu.honey.command.convertSingleQuotesToDoubleQuotes"
             name="Convert &apos; to &quot;">
       </command>
       <command
-            categoryId="com.brsanthu.honey.command.category.textEditing"
+            categoryId="com.brsanthu.honey.command.category.convert"
             description="Converts the &lt; and &gt; characters to &amp;lt; and &amp;gt; strings in the selected text."
             id="com.brsanthu.honey.command.convertGtLtToXmlSafe"
             name="Convert &lt;&gt; to &amp;lt;&amp;gt;">
       </command>
       <command
-            categoryId="com.brsanthu.honey.command.category.textEditing"
+            categoryId="com.brsanthu.honey.command.category.convert"
             description="Converts the &amp;lt; and &amp;gt; characters to &lt; and &gt; strings in the selected text."
             id="com.brsanthu.honey.command.convertXmlSafeToGtLt"
             name="Convert &amp;lt;&amp;gt; to &lt;&gt;">
       </command>
       <command
-            categoryId="com.brsanthu.honey.command.category.textEditing"
+            categoryId="com.brsanthu.honey.command.category.convert"
             description="Swaps the &quot; with &apos; in the selected text"
             id="com.brsanthu.honey.command.swapQuotes"
             name="Swap &quot; &amp; &apos;">
       </command>
       <command
-            categoryId="com.brsanthu.honey.command.category.textEditing"
+            categoryId="com.brsanthu.honey.command.category.convert"
             id="com.brsanthu.honey.command.convertToUpperCase"
             name="Convert to UPPER CASE">
       </command>
       <command
-            categoryId="com.brsanthu.honey.command.category.textEditing"
+            categoryId="com.brsanthu.honey.command.category.convert"
             id="com.brsanthu.honey.command.convertToLowerCase"
             name="Convert to lower case">
       </command>
       <command
-            categoryId="com.brsanthu.honey.command.category.textEditing"
+            categoryId="com.brsanthu.honey.command.category.convert"
             id="com.brsanthu.honey.command.convertToCamelCase"
             name="Convert to Camel Case">
       </command>
       <command
-            categoryId="com.brsanthu.honey.command.category.textEditing"
+            categoryId="com.brsanthu.honey.command.category.convert"
             id="com.brsanthu.honey.command.convertToSentenseCase"
             name="Convert to Sentense case">
       </command>
       <command
-            categoryId="com.brsanthu.honey.command.category.textEditing"
+            categoryId="com.brsanthu.honey.command.category.convert"
             id="com.brsanthu.honey.command.convertToInvertCase"
             name="Convert to iNVERT cASE">
       </command>
       <command
-            categoryId="com.brsanthu.honey.command.category.textEditing"
+            categoryId="com.brsanthu.honey.command.category.delete"
             id="com.brsanthu.honey.command.trimTrailingSpaces"
             name="Trim Trailing White Spaces">
       </command>
       <command
-            categoryId="com.brsanthu.honey.command.category.textEditing"
+            categoryId="com.brsanthu.honey.command.category.insert"
             description="Inserts current date in &apos;12/31/2012&apos;"
             id="com.brsanthu.honey.command.insertShortDate"
             name="Insert Short Date">
       </command>
       <command
-            categoryId="com.brsanthu.honey.command.category.textEditing"
+            categoryId="com.brsanthu.honey.command.category.insert"
             description="Inserts current date in &apos;Monday, December 31, 2012&apos; format"
             id="com.brsanthu.honey.command.insertLongDate"
             name="Insert Long Date">
       </command>
       <command
+      		categoryId="com.brsanthu.honey.command.category.insert"
             description="Inserts current time in &apos;1:45:30 PM&apos; format"
             id="com.brsanthu.honey.command.insertTime"
             name="Insert Time">
       </command>
       <command
+      		categoryId="com.brsanthu.honey.command.category.insert"
             description="Inserts current time in unix epoch format"
             id="com.brsanthu.honey.command.insertUnixTime"
             name="Insert Unix Time">
       </command>
       <command
+      		categoryId="com.brsanthu.honey.command.category.insert"
             description="Inserts current time in &apos;2012-12-31&apos; format"
             id="com.brsanthu.honey.command.insertIsoDate"
             name="Insert ISO Date">
       </command>
       <command
+      		categoryId="com.brsanthu.honey.command.category.insert"
             description="Inserts current time in &apos;2012-12-31T12:00:00&apos; format"
             id="com.brsanthu.honey.command.insertIsoDateTime"
             name="Insert ISO Date Time">
       </command>
       <command
+      		categoryId="com.brsanthu.honey.command.category.insert"
             description="Inserts the Date/Time in selected format"
             id="com.brsanthu.honey.command.insertCustomDate"
             name="Insert Custom Date/Time">
       </command>
       <command
+      		categoryId="com.brsanthu.honey.command.category.endecrypt"
             description="Encrypts the selected or all editor text using AES-128/CBC encryption and encodes as Hex String"
             id="com.brsanthu.honey.command.encryptText"
             name="Encrypt Text">
       </command>
       <command
+      		categoryId="com.brsanthu.honey.command.category.endecrypt"
             description="Decrypts the selected or all editor text using AES-128/CBC bit decryption"
             id="com.brsanthu.honey.command.decryptText"
             name="Decrypt Text">
       </command>
       <command
+      		categoryId="com.brsanthu.honey.command.category.copy"
             description="Copies the current editor file name to clipboard"
             id="com.brsanthu.honey.command.copyFileName"
             name="Copy File Name">
       </command>
       <command
+      		categoryId="com.brsanthu.honey.command.category.copy"
             description="Copies the current editor file name with path to clipboard in unix format"
             id="com.brsanthu.honey.command.copyFileNameWithPathUnix"
             name="Copy File Name with Path (Unix)">
       </command>
       <command
+      		categoryId="com.brsanthu.honey.command.category.copy"
             description="Copies the current editor file name with path to clipboard in Windows format"
             id="com.brsanthu.honey.command.copyFileNameWithPathWindows"
             name="Copy File Name with Path (Windows)">
       </command>
       <command
+      		categoryId="com.brsanthu.honey.command.category.copy"
             description="Copies the all opened editor file names with path to clipboard in unix format"
             id="com.brsanthu.honey.command.copyFileNamesWithPathUnix"
             name="Copy All File Names with Path (Unix)">
       </command>
       <command
+      		categoryId="com.brsanthu.honey.command.category.copy"
             description="Copies the all opened editor file names with path to clipboard in windows format"
             id="com.brsanthu.honey.command.copyFileNamesWithPathWindows"
             name="Copy All File Names with Path (Windows)">
       </command>
       <command
+      		categoryId="com.brsanthu.honey.command.category.copy"
             description="Copies and appends the selected text to clipboard"
             id="com.brsanthu.honey.command.copyAppend"
             name="Copy and Append">
       </command>
       <command
+      		categoryId="com.brsanthu.honey.command.category.copy"
             description="Copies and appends the selected text to clipboard with New Line"
             id="com.brsanthu.honey.command.copyAppendNewLine"
             name="Copy and Append with New Line">
       </command>
       <command
+      		categoryId="com.brsanthu.honey.command.category.bookmark"
+            id="com.brsanthu.honey.command.deleteBookmarkedLinesInFile"
+            name="Delete all bookmarked lines in current open file">
+      </command>
+      <command
+      		categoryId="com.brsanthu.honey.command.category.bookmark"
             id="com.brsanthu.honey.command.toggleBookmark"
             name="Toggle Bookmark(s) (Create or Remove Bookmark)">
       </command>
       <command
+      		categoryId="com.brsanthu.honey.command.category.bookmark"
             id="com.brsanthu.honey.command.clearBookmarks"
             name="Clear (Remove or Delete) All Bookmarks">
       </command>
       <command
+      		categoryId="com.brsanthu.honey.command.category.bookmark"
             id="com.brsanthu.honey.command.copyBookmarkedLines"
             name="Copy Bookmarked Lines">
       </command>
       <command
+      		categoryId="com.brsanthu.honey.command.category.fastmark"
             id="com.brsanthu.honey.command.setFastmark"
             name="Set Fastmark">
          <commandParameter
@@ -185,10 +240,12 @@
          </commandParameter>
       </command>
       <command
+      		categoryId="com.brsanthu.honey.command.category.bookmark"
             id="com.brsanthu.honey.command.openBookmark"
             name="Open Bookmarks">
       </command>
       <command
+      		categoryId="com.brsanthu.honey.command.category.fastmark"
             id="com.brsanthu.honey.command.gotoFastmark"
             name="Goto Fastmark">
          <commandParameter
@@ -199,6 +256,7 @@
          </commandParameter>
       </command>
       <command
+      		categoryId="com.brsanthu.honey.command.category.bookmark"
             id="com.brsanthu.honey.command.gotoBookmarkInFile"
             name="Goto Bookmark in File">
          <commandParameter
@@ -209,10 +267,12 @@
          </commandParameter>
       </command>
       <command
+      		categoryId="com.brsanthu.honey.command.category.bookmark"
             id="com.brsanthu.honey.command.gotoNextBookmarkInFile"
             name="Goto Next Bookmark in File">
       </command>
       <command
+      		categoryId="com.brsanthu.honey.command.category.bookmark"
             id="com.brsanthu.honey.command.gotoPrevBookmarkInFile"
             name="Goto Prev Bookmark in File">
       </command>
@@ -231,13 +291,13 @@
             name="Paste Text as Windows Path">
       </command>
       <command
-            categoryId="com.brsanthu.honey.command.category.textEditing"
+            categoryId="com.brsanthu.honey.command.category.font"
             defaultHandler="com.brsanthu.honey.handler.font.IncreaseFontSizeHandler"
             id="com.brsanthu.honey.command.increaseFontSize"
             name="Increase Font Size">
       </command>
       <command
-            categoryId="com.brsanthu.honey.command.category.textEditing"
+            categoryId="com.brsanthu.honey.command.category.font"
             defaultHandler="com.brsanthu.honey.handler.font.DecreaseFontSizeHandler"
             id="com.brsanthu.honey.command.decreaseFontSize"
             name="Decrease Font Size">
@@ -301,6 +361,16 @@
             categoryId="com.brsanthu.honey.command.category.escaping"
             id="com.brsanthu.honey.command.javaUnescape"
             name="Java Unescape">
+      </command>
+      <command
+            categoryId="com.brsanthu.honey.command.category.joinsplit"
+            id="com.brsanthu.honey.command.joinAltLinesWithString"
+            name="Join alternate lines with specified String">
+      </command>
+      <command
+            categoryId="com.brsanthu.honey.command.category.joinsplit"
+            id="com.brsanthu.honey.command.joinLinesWithString"
+            name="Join lines with specified String">
       </command>
    </extension>
    <extension
@@ -412,6 +482,15 @@
       <handler
             class="com.brsanthu.honey.handler.copy.CopyAppendWithNewLineHandler"
             commandId="com.brsanthu.honey.command.copyAppendNewLine">
+      </handler>
+      <handler
+            class="com.brsanthu.honey.handler.bookmark.DeleteBookmarkedLinesInFileHandler"
+            commandId="com.brsanthu.honey.command.deleteBookmarkedLinesInFile">
+         <activeWhen>
+            <reference
+                  definitionId="com.brsanthu.honey.definition.currentEditorIsTextEditor">
+            </reference>
+         </activeWhen>
       </handler>
       <handler
             class="com.brsanthu.honey.handler.bookmark.ToggleBookmarkHandler"
@@ -618,6 +697,24 @@
       <handler
             class="com.brsanthu.honey.handler.paste.PasteTextAsWindowsPathHandler"
             commandId="com.brsanthu.honey.command.pasteTextAsWindowsPath">
+         <activeWhen>
+            <reference
+                  definitionId="com.brsanthu.honey.definition.currentEditorIsTextEditor">
+            </reference>
+         </activeWhen>
+      </handler>
+      <handler
+            class="com.brsanthu.honey.handler.join.JoinAltLinesWithStringHandler"
+            commandId="com.brsanthu.honey.command.joinAltLinesWithString">
+         <activeWhen>
+            <reference
+                  definitionId="com.brsanthu.honey.definition.currentEditorIsTextEditor">
+            </reference>
+         </activeWhen>
+      </handler>
+      <handler
+            class="com.brsanthu.honey.handler.join.JoinLinesWithStringHandler"
+            commandId="com.brsanthu.honey.command.joinLinesWithString">
          <activeWhen>
             <reference
                   definitionId="com.brsanthu.honey.definition.currentEditorIsTextEditor">
